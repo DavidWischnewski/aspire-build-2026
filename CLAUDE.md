@@ -11,7 +11,7 @@ cp .env.example .env.local
 pnpm install
 ```
 
-Then type `/mcp` → authenticate Vercel + Supabase. You're ready.
+You're ready.
 
 ---
 
@@ -49,11 +49,6 @@ You are assisting a workshop attendee at Aspire Summit 2026, Day 2: "Build with 
 - `/aspire-brainstorm` — 4-advisor council, decides what feature to build
 - `/aspire-design` — design the feature (layout, components, flow)
 - `/aspire-demo-script` — 30s demo script at the end
-
-## Available MCPs (run `/mcp` to auth)
-
-- `vercel` — check deploys, manage env vars
-- `supabase` — query DB, inspect tables, manage auth
 
 ## Environment
 
