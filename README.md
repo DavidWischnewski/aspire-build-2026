@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aspire Summit 2026 — Build with Claude
 
-## Getting Started
+Day 2 workshop. 120 minutes. One idea. Ship it.
 
-First, run the development server:
+Live app: **https://aspire-build-2026-1jdj.vercel.app**
 
+---
+
+## Setup (do this before the day — 5 min)
+
+**1. Clone the repo**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/DavidWischnewski/aspire-build-2026
+cd aspire-build-2026
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**2. Copy the env file**
+```bash
+cp .env.example .env.local
+```
+Supabase keys are already filled in — nothing to change.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**3. Install dependencies**
+```bash
+pnpm install
+```
+Don't have pnpm? Run `npm install -g pnpm` first.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**4. Open Claude Code**
+```bash
+claude
+```
 
-## Learn More
+**5. Auth the two tools**
+Type `/mcp` → authenticate **Vercel** and **Supabase** (30 seconds, browser OAuth).
 
-To learn more about Next.js, take a look at the following resources:
+You're ready.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## On the day
 
-## Deploy on Vercel
+```
+/aspire-brainstorm   min 0–10    decide what to build
+/aspire-design       min 10–20   pick layout + components  
+[build with Claude]  min 20–100  ship the feature
+git push             min 100     auto-deploys to Vercel
+/aspire-demo-script  min 110     prep your 30s demo
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Questions?
+
+Ask David — or open Claude Code in this folder and ask Claude directly.
