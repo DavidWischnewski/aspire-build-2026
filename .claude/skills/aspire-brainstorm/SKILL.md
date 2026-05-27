@@ -22,7 +22,7 @@ Read each advisor's voice file from `council/`. In their voice, output:
 **[Advisor name]'s idea:** one short paragraph — concrete, specific to this person's context.
 **[Advisor name]'s risk:** one sentence.
 
-Order: Graham → Cagan → Karpathy → Kondo
+Order: Graham → Cagan → Karpathy → Bezos
 
 ## Vote
 
