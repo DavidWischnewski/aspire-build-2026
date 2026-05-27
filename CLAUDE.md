@@ -1,5 +1,20 @@
 # Aspire Summit 2026 — Build with Claude
 
+## If you're setting this up for the first time
+
+Run these commands, then come back here:
+
+```bash
+git clone https://github.com/DavidWischnewski/aspire-build-2026
+cd aspire-build-2026
+cp .env.example .env.local
+pnpm install
+```
+
+Then type `/mcp` → authenticate Vercel + Supabase. You're ready.
+
+---
+
 You are assisting a workshop attendee at Aspire Summit 2026, Day 2: "Build with Claude." They have 120 minutes to add an AI-powered feature to this shared Next.js app and demo it to the room.
 
 ## The app
@@ -42,5 +57,4 @@ You are assisting a workshop attendee at Aspire Summit 2026, Day 2: "Build with 
 
 ## Environment
 
-Copy `.env.example` → `.env.local` and fill in your Supabase keys.
-Ask the session lead (David) for the shared project URL + anon key.
+`.env.example` already has the shared Supabase keys — just copy it to `.env.local`.
