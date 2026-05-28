@@ -2,16 +2,15 @@
 
 ## First-run setup — do exactly this, then stop
 
-If `.env.local` or `node_modules` is missing, run exactly:
+If `.env.local` or `node_modules` is missing, run this **single** chained command (one shell roundtrip):
 
 ```bash
-cp .env.example .env.local
-pnpm install
+cp .env.example .env.local && pnpm install
 ```
 
 Then reply with exactly: **Ready. Run `pnpm dev`.**
 
-Do not read other files. Do not start the dev server. Do not run lint/build/tests. Do not summarize the repo or the workshop. The attendee engages the workshop content below only when they run a skill or ask to build.
+Do not read other files. Do not start the dev server. Do not run lint/build/tests. Do not summarize the repo or the workshop. Do not split the chained command into separate steps. The attendee engages the workshop content below only when they run a skill or ask to build.
 
 ---
 
