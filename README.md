@@ -3,7 +3,7 @@
 **After accepting the GitHub invite, open Claude Code and paste this:**
 
 ```
-Clone https://github.com/DavidWischnewski/aspire-build-2026, set it up, and get me ready for the Aspire Summit workshop.
+Clone https://github.com/DavidWischnewski/aspire-build-2026 and run its setup. Stop when ready to run pnpm dev.
 ```
 
-Claude handles the rest.
+That's it. Then `pnpm dev` and start the workshop.
