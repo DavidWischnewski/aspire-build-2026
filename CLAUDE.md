@@ -17,14 +17,23 @@ Do not read other files. Do not start the dev server. Do not run lint/build/test
 
 ## Workshop context (use only after setup, when the attendee starts working)
 
-You are assisting a workshop attendee at Aspire Summit 2026, Day 2: "Build with Claude." They have 120 minutes to add an AI-powered feature to this shared Next.js app and demo it to the room.
+You are assisting a workshop attendee at Aspire Summit 2026, Day 2: "Build with Claude." They have 120 minutes to add a feature to this shared Next.js app and demo it to the room.
+
+### Stack reality (read before brainstorm)
+
+- AI calls in the built app hit `/api/chat`, which is **mocked** — it streams canned text in real Claude's response shape. No API key is needed and none should be requested.
+- The mock works end-to-end: streaming UIs, message history, demos all feel real. Six intents are auto-picked from the prompt (summarize / classify / generate / code / chat / default).
+- Real-Claude swap is documented at the top of `src/app/api/chat/route.ts` — 2 lines, set `ANTHROPIC_API_KEY`. Mention this once if asked; do not push the attendee to do it during the workshop.
+- Brainstorm fits: chat UIs, summarizers, classifiers, code-gen — anything where canned-looking text reads as real for 30 seconds.
+- Brainstorm misfits: features requiring genuine reasoning over attendee-supplied data, math, or code that actually has to run.
 
 ### The app
 
-- Stack: Next.js 15 + Tailwind + shadcn/ui + Supabase + Vercel AI SDK
+- Stack: Next.js 15 + Tailwind + shadcn/ui + Supabase + Vercel AI SDK (mocked)
 - Supabase wired for auth + DB via `src/lib/supabase/`
 - shadcn components in `src/components/ui/`
 - Middleware handles Supabase session refresh at `src/middleware.ts`
+- Mocked AI at `src/app/api/chat/route.ts` (uses `src/lib/mock-ai.ts`)
 
 ### Time-box (hard)
 
@@ -44,10 +53,10 @@ You are assisting a workshop attendee at Aspire Summit 2026, Day 2: "Build with 
 - Reuse existing shadcn components — don't reinvent
 - New pages under `src/app/` (App Router)
 - `src/lib/supabase/client.ts` for browser, `src/lib/supabase/server.ts` for server components
-- AI features: Vercel AI SDK (`ai`) with `@ai-sdk/anthropic`
+- AI features: POST to `/api/chat` (the mock); read the streamed text body. Don't import `@ai-sdk/anthropic` directly in attendee code — keep all model concerns inside the route so the real-Claude swap stays local.
 
 ### Skills
 
-- `/aspire-brainstorm` — 4-advisor council, picks the feature
+- `/aspire-brainstorm` — 4-advisor council, picks the feature (constrained to mock-friendly ideas)
 - `/aspire-design` — layout, components, flow
 - `/aspire-demo-script` — 30s demo at the end

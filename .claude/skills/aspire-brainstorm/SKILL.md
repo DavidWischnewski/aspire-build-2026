@@ -15,6 +15,10 @@ Ask the user:
 
 If they say "blank", use: "Something I'd actually use in my job next Monday."
 
+## Constraint (tell the attendee upfront, one line)
+
+The built app calls a mocked `/api/chat` that streams canned text — no real LLM inference, no API key. Council ideas must demo end-to-end against that. Steer toward chat UIs, summarizers, classifiers, code-gen, draft-writers — features where canned-looking streamed text reads as real for a 30-second demo. Steer away from features that need genuine reasoning over attendee-supplied data, math, or code that actually has to run.
+
 ## Run the council
 
 Read each advisor's voice file from `council/`. In their voice, output:
